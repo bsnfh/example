@@ -1,20 +1,27 @@
 #include<stdio.h>
-#include<windows.h>
-
 int main()
 {
-	float x, y, a;
-	for (y = 1.5f; y > -1.5f; y -= 0.1f)
+	int i;
+	int input = 0;
+	int num[10] = { 0 };
+	/*for (i = 0; i < 10; i++)
 	{
-		for (x = -1.5f; x < 1.5f; x += .05f)
+		num[i] = 0;
+	}*/
+	scanf_s("%d", &input);
+	while (input != -1)
+	{
+		if (input >= 0 && input <= 9)
 		{
-			a = x * x + y * y - 1;
-			putchar(a * a * a - x * x * y * y * y < 0.0f ? 'x' : ' ');
+			num[input]++;
 		}
-		system("color 0c");
-		Sleep(50);
-		putchar('\n');
+		
+		scanf_s("%d", &input);
 	}
 	
+	for (i = 0; i <= 9; i++)
+	{
+		printf("%d: %d\n",i, num[i]);
+	}
 	return 0;
 }
